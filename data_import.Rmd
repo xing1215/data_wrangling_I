@@ -1,0 +1,14 @@
+---
+title: "data import"
+author: "Xing Chen"
+date: 2019-9-17
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+
