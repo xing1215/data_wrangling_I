@@ -75,3 +75,17 @@ mlb11_data =
 ```
 
 # read in sas file…
+
+``` r
+pulse_data = haven::read_sas("./data/public_pulse_data.sas7bdat")
+```
+
+# output data file…
+
+``` r
+mlb_data_subset = 
+  read_excel(path = "./data/mlb11.xlsx",
+             range = "A1:D7")
+
+write_csv(mlb_data_subset, path = "./data/mlb_subset.csv")
+```
