@@ -6,19 +6,20 @@ Xing Chen
 ## load in the litters file
 
 ``` r
-litters_data = read_csv(file = "./data/FAS_litters.csv")
+litters_data = read_csv(file = "./data/FAS_litters.csv",
+  skip = 10, col_names = FALSE)
 ```
 
     ## Parsed with column specification:
     ## cols(
-    ##   Group = col_character(),
-    ##   `Litter Number` = col_character(),
-    ##   `GD0 weight` = col_double(),
-    ##   `GD18 weight` = col_double(),
-    ##   `GD of Birth` = col_double(),
-    ##   `Pups born alive` = col_double(),
-    ##   `Pups dead @ birth` = col_double(),
-    ##   `Pups survive` = col_double()
+    ##   X1 = col_character(),
+    ##   X2 = col_character(),
+    ##   X3 = col_double(),
+    ##   X4 = col_double(),
+    ##   X5 = col_double(),
+    ##   X6 = col_double(),
+    ##   X7 = col_double(),
+    ##   X8 = col_double()
     ## )
 
 ``` r
@@ -44,3 +45,33 @@ pups_file = read_csv(file = "./data/FAS_pups.csv")
 ``` r
 pups_file = janitor::clean_names(pups_file)
 ```
+
+## play with column parsing
+
+``` r
+litters_data = read_csv(file = "./data/FAS_litters.csv",
+  col_types = cols(
+    Group = col_character(),
+    `Litter Number` = col_character(),
+    `GD0 weight` = col_double(),
+    `GD18 weight` = col_double(),
+    `GD of Birth` = col_integer(),
+    `Pups born alive` = col_integer(),
+    `Pups dead @ birth` = col_integer(),
+    `Pups survive` = col_integer()
+  )
+)
+```
+
+``` r
+pups_data = read_csv("./data/FAS_pups.csv", col_types = "cciiii")
+```
+
+# import excel file
+
+``` r
+mlb11_data = 
+  read_excel(path = "./data/mlb11.xlsx")
+```
+
+# read in sas file…
