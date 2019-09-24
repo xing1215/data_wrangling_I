@@ -205,3 +205,19 @@ In larger datasets, I also use `starts_with()`, `ends_with()`, and
 `contains()` often.
 
 ## filtering…..
+
+``` r
+filter(litters_data, group == "Con7")
+
+filter(litters_data, gd_of_birth == 20)
+
+filter(litters_data, group %in% c("Con7", "Con8"))
+
+filter(litters_data, gd0_weight + gd18_weight < 70)
+
+# dont do this!
+# filter(litters_data, !is.na(gd0_weight))
+
+drop_na(litters_data)
+drop_na(litters_data, gd0_weight)
+```
