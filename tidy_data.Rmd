@@ -1,0 +1,14 @@
+---
+title: "Tidy data"
+author: "Xing Chen"
+date: 2019-9-24
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+
